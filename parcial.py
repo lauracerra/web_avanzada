@@ -1,8 +1,10 @@
 import math
-#
+
+#La función distancia(p1, p2) calcula la distancia euclidiana entre dos puntos.
 def distancia(p1, p2):
     return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
-#
+
+#La función pares_cercanos_divide_y_venceras(coordenadas) implementa el enfoque de "Divide y Vencerás" para encontrar los puntos más cercanos. Si la cantidad de coordenadas es pequeña (3 o menos), se realiza una búsqueda exhaustiva para encontrar el par de puntos más cercanos y se devuelve la distancia y los puntos
 def pares_cercanos_divide_y_venceras(coordenadas):
     if len(coordenadas) <= 3:
         min_dist = float('inf')
@@ -41,7 +43,7 @@ def pares_cercanos_divide_y_venceras(coordenadas):
             j += 1
 
     return puntos_mas_cercanos, min_dist
-#
+
 def pares_cercanos(*args, **kwargs):
     coordenadas = args[0]
     coordenadas.sort(key=lambda x: x[0])
